@@ -5,7 +5,7 @@ FROM debian:bookworm-slim
 RUN apt-get update && apt-get upgrade
 
 # Install Docker for ARM64 workflows
-RUN apt-get install -y ca-certificates curl gnupg lsb-release
+RUN apt-get install -y ca-certificates curl gnupg lsb-release qemu qemu-user
 
 RUN curl -fsSL https://download.docker.com/linux/debian/gpg | gpg --dearmor -o /usr/share/keyrings/docker-archive-keyring.gpg
 
