@@ -1,5 +1,5 @@
 # Use Debian Bookworm as the base image
-FROM debian:bookworm-slim
+FROM arm64v8/debian:bookworm-slim
 
 # Update and upgrade the system
 RUN apt-get update && apt-get upgrade
