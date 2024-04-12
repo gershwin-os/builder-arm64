@@ -2,7 +2,7 @@
 FROM arm64v8/debian:bookworm-slim
 
 # Update and upgrade the system
-RUN apt-get update && apt-get upgrade
+RUN apt-get update && apt-get upgrade -y
 
 # Install necessary build dependencies
 RUN apt install -y curl git jq live-build sudo unzip && \
