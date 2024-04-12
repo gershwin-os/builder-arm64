@@ -1,16 +1,11 @@
 # Use Debian Bookworm as the base image
 FROM debian:bookworm-slim
 
-# Install necessary build dependencies
+# Update and upgrade the system
 RUN apt-get update && apt-get upgrade
 
-# Install things for Docker
-RUN apt-get apt-get install -y \
-    apt-transport-https \
-    ca-certificates \
-    curl \
-    gnupg \
-    lsb-release
+# Install Docker for ARM64 workflows
+RUN apt-get apt-get install -y ca-certificates curl
 
 RUN curl -fsSL https://download.docker.com/linux/debian/gpg | gpg --dearmor -o /usr/share/keyrings/docker-archive-keyring.gpg
 
@@ -21,6 +16,7 @@ RUN echo \
 RUN apt-get update && \
     apt-get install -y docker-ce docker-ce-cli containerd.io
 
+# Install necessary build dependencies
 RUN apt install -y curl git jq live-build sudo unzip && \
   git clone https://github.com/gnustep/tools-scripts && \
   ./tools-scripts/install-dependencies-linux && \
