@@ -5,4 +5,4 @@ This Dockerfile creates a GitHub package utilized by GitHub Actions to build the
 ### Notes:
 
 - **Purpose:** This Dockerfile is designed specifically for GitHub Actions workflows targeting Gershwin development and builds.
-- **Dependencies:** GNUstep's tools-make and other required packages are pre-installed for efficiency.
+- **Dependencies:** GNUstep's required packages are pre-installed for efficiency.
